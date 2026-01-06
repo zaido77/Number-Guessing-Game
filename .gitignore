@@ -1,0 +1,15 @@
+App.config
+app.manifest
+Program.cs
+Number Guessing Game.csproj
+Number Guessing Game.slnx
+frmMain.Designer.cs
+frmMain.resx
+frmDifficulty.Designer.cs
+frmDifficulty.resx
+frmGame.Designer.cs
+frmGame.resx
+Properties/
+bin/
+obj/
+.vs/
