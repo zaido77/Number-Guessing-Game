@@ -9,6 +9,8 @@ frmDifficulty.Designer.cs
 frmDifficulty.resx
 frmGame.Designer.cs
 frmGame.resx
+frmBase.Designer.cs
+frmBase.resx
 Properties/
 bin/
 obj/

@@ -13,23 +13,23 @@ using System.Windows.Forms;
 
 namespace Number_Guessing_Game
 {
-    public partial class frmGame : Form
+    public partial class frmGame : frmBase
     {
         static Random random = new Random();
 
         static int _MaxNumberToGuess;
+        int _NumberToGuess;
 
         public frmGame(string sDifficultyMode, int DifficultyTagNumber)
         {
             InitializeComponent();
 
             _MaxNumberToGuess = DifficultyTagNumber;
+            _NumberToGuess = GenerateRandomNumber();
 
             lblTitle.Text = "Guess Between 1 - " + DifficultyTagNumber.ToString();
             lblSubTitle.Text = "Mode: " + sDifficultyMode;
         }
-
-        int _NumberToGuess = GenerateRandomNumber();
 
         static int GenerateRandomNumber()
         {
@@ -121,11 +121,7 @@ namespace Number_Guessing_Game
 
         private void btnExit_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Are uou sure you want to exit the game", "Exit Game", 
-                MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.Yes)
-            {
-                Application.Exit();
-            }
+            frmDifficulty.ShowExitAppMessageBox();
         }
 
         private void btnBack_Click(object sender, EventArgs e)

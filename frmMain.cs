@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace Number_Guessing_Game
 {
-    public partial class frmMain : Form
+    public partial class frmMain : frmBase
     {
         public frmMain()
         {

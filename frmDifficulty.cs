@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace Number_Guessing_Game
 {
-    public partial class frmDifficulty : Form
+    public partial class frmDifficulty : frmBase
     {
         public frmDifficulty()
         {
@@ -19,6 +19,15 @@ namespace Number_Guessing_Game
             btnEasy.Tag = 5;
             btnMedium.Tag = 10;
             btnHard.Tag = 20;
+        }
+
+        public static void ShowExitAppMessageBox()
+        {
+            if (MessageBox.Show("Are you sure you want to exit the game?", "Exit Game",
+                MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
         }
 
         private void btnDifficulty_Click(object sender, EventArgs e)
@@ -43,11 +52,7 @@ namespace Number_Guessing_Game
 
         private void btnExit_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Are uou sure you want to exit the game", "Exit Game",
-                MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.Yes)
-            {
-                Application.Exit();
-            }
+            ShowExitAppMessageBox();
         }
     }
 }
